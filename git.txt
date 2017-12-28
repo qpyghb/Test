@@ -1,0 +1,310 @@
+
+	
+!@Git初始化
+git config user.name "qpyghb"
+git config user.email "1323668359@qq.com"
+git init
+
+!@Git忽略文件
+cat .gitignore		//*.[oa] 、 *~
+/*	
+	Git忽略文件（过滤器）
+	Git档案库下的.gitignore文件
+	所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。
+	可以使用标准的 glob 模式匹配。						
+	匹配模式最后跟反斜杠（/）说明要忽略的是目录。
+	要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
+	#glob模式
+	（!）取反；
+	星号（*）匹配零个或多个任意字符； 
+	[abc] 匹配任何一个列在方括号中的字符；
+	问号（?）只匹配一个任意字符；
+	如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到9 的数字）
+*/	
+
+!@Git查看状态
+git status				//查看git状态， 未跟踪untracked/未更新unmodified/更新modified/暂存staged
+git diff				//查看未暂存的和已提交的差异
+git diff --cached		//查看已暂存的和已提交的差异
+git diff --staged
+
+!@Git提交
+git commit						//打开文本编辑器，保存退出后提交
+git commit -m 'description'		//直接提交 暂存的文件
+git commit -a -m 'description'	//直接提交 已跟踪的文件自动暂存，不用add
+
+!@Git移除
+git rm test.txt				//删除文件并放入暂存， 如果之前文件修改后暂存过， 需要加上 -f 强制删除
+git rm --cached test.txt	//删除提交版本库的文件，本地文件不删除
+git rm log/\*.log			//删除log文件夹下的所有log后缀文件，加'\'则会递归遍历当前目录和所有子目录
+	
+!@Git查看历史
+git log	[-p] [-n] 			//加上-p显示每次提交的差异， -2表示显示最近N次提交
+git log --pretty=oneline	//一行显示一次提交	
+git log --pretty=format:"%h - %an, %ar : %s"	
+/*	
+	常用参数
+	选项 说明
+	-p 按补丁格式显示每个更新之间的差异。
+	--stat 显示每次更新的文件修改统计信息。
+	--shortstat 只显示 --stat 中最后的行数修改添加移除统计。
+	--name-only 仅在提交信息后显示已修改的文件清单。
+	--name-status 显示新增、修改、删除的文件清单。
+	--abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+	--relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）。
+	--graph 显示 ASCII 图形表示的分支合并历史。
+	--pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。
+	-(n) 仅显示最近的 n 条提交
+	--since, --after 仅显示指定时间之后的提交。
+	--until, --before 仅显示指定时间之前的提交。
+	--author 仅显示指定作者相关的提交。
+	--committer 仅显示指定提交者相关的提交。
+	
+	--all-match 全匹配
+	
+	格式化说明
+	选项 说明
+	%H 提交对象（commit）的完整哈希字串		
+	%h 提交对象的简短哈希字串
+	%T 树对象（tree）的完整哈希字串
+	%t 树对象的简短哈希字串
+	%P 父对象（parent）的完整哈希字串
+	%p 父对象的简短哈希字串
+	%an 作者（author）的名字
+	%ae 作者的电子邮件地址
+	%ad 作者修订日期（可以用 -date= 选项定制格式）
+	%ar 作者修订日期，按多久以前的方式显示
+	%cn 提交者(committer)的名字
+	%ce 提交者的电子邮件地址
+	%cd 提交日期
+	%cr 提交日期，按多久以前的方式显示
+	%s 提交说明
+*/
+
+		
+	
+!@Other
+git config --list
+git add *.txt
+
+git clone git://github.com/schacon/grit.git mygrit
+git config --global core.editor		//设置编辑软件
+git mv test.txt test				//文件改名	
+git commit --amend		//重新提交上次的提交，可以新增暂存	
+git reset HEAD test.txt				//取消暂存的文件到unstage	
+git checkout --	test.txt			//重置文件的修改
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\\10.0.0.7\dmyx_slg\工具
+-150 165 178
+40 125 0
+
+add_sp:ins:100:0
+
+go_resource hide
+public class CurrencyMgr : Singleton<CurrencyMgr>
+ui_game \ UIObject \ Go_RadarObj
+
+StringUtil  这个是字符串工具类  拼接字符串的话 用这个类里面的 StringBuild  大于2个字符拼接的时候效率比String.Format 高
+meUtil用于时间转换 还有时间计算  显示  类似 把秒转换为标准时间格式（分：秒） /// 把秒转换为标准时间格式（小时：分：秒）
+这边有个通用英雄头像 Go_HeroIcon    脚本GUIWndHeroIconItem   英雄头像相关的都复用这个
+加上命名空间 namespace SLGGame， 在文件头加上作者，和文件说明，如果是改动别的，在原作者上加上自己的名字
+unity已经集成了json的读写类型 JsonUtility， 慢慢可以把litJosn去掉
+
+Win_TipMessage  这个控件是 通用的弹出提示的飘字UI  以后有提示的会大量用到  
+
+Win_GeneralConfirm 是通用的提示UI  
+guiaddsceneitemreceive
+GUIWndTipMessage.instance.showTextInfo("飘字");
+GUIWndGeneralConfirm.instance.OpenShowInfoWnd(); //通用提示窗口
+TimeUtil 类GetCurrentTimeByClient  可以获得服务端时间 用于计时
+TextAmend  用于静态控件读取 语言表   ScreenClickActionProcessor 点击屏幕上非本物体区域的事件处理器 这些工具都封装好了 有用到就统一用这些
+
+wnd.worldMapOp.GetComponent<RectTransform>().anchoredPosition = _pos;
+
+21 25 mazeInfo = data.info;
+S1904_SearchLevel_FetchSmallTreasure
+
+0bb5
+0bc1
+1174   合体技 特效
+
+GroundMapObjectRef.GetObjectElementName((MapObjectElement)Enum.Parse(typeof(MapObjectElement), _resourceDic.SourceRef.Type.ToString()))
+
+_AALBasicLoadObj loadObj = GUIWndMain.instance;
+//开启加载
+loadObj.load(stepCounter.addDoneStepCount);
+				
+之前说的分身效果，就是新加一个buff   用自己的模型变出一个和自己一样的外形  然后动作也会更着一起做  但是是半透明的效果
+				
+新建Yielders 类  之前大部分写法都是 yield return new WaitForEndOfFrame()  或者     yield return new WaitForSeconds(1.0f) 每次调用其实都会内存开销 有时候会用于倒计时,现在写法yield return Yielders.GetWaitForSeconds(1.0f); Yielders 里面会有这些缓存 就不会每次分配内存
+
+Hero
+
+HeroModule.BoHero boHero = HeroModule.BizHero.GetBoHero(_heroID);
+HeroModule.BizHero.GetHeroCount()			
+ALUGUICommon.setLabelTxt(wnd.txtName, WCGLanguageSqlite.instance.GetLanguage(skillRef.name));				
+
+//////////////////////////////////////////////////////itemchip
+SynthesisItemFail	SystemPrompt	合成に失敗しました	合成物品失败
+
+/////////////////////////////////////////////////////
+
+public class GUIWndHeroUpgradeStarSkillInfoItem : _ATALBasicUISubWnd<GUIMonoHeroUpgradeStarSkillInfoItem>
+{
+
+    public GUIWndHeroUpgradeStarSkillInfoItem(GUIMonoHeroUpgradeStarSkillInfoItem _wnd)
+        : base(_wnd)
+    {
+
+    }
+
+}
+
+                        foreach (System.Reflection.FieldInfo p in _resourceDic[keys[i]].SourceRef.GetType().GetFields()) {
+                            if (p.Name.ToLower().Equals(radarShowRuleDic[j].field.ToLower())) {
+                                if (CompareShowRule((p.GetValue(_resourceDic[keys[i]].SourceRef)).ToString(), radarShowRuleDic[j])) {
+                                    if (curLv == maxResourceLv) {
+                                        lst.Add(new KeyValuePair<Vector2, ResourceInfo>(keys[i], _resourceDic[keys[i]]));
+                                    }
+                                    flag = true;
+                                    break;
+                                }
+                            }
+                        }
+
+WCGPMesMgr.instance.showTwoBtnMes("钻石不足，请购买钻石"
+            , WCGLanguageSqlite.instance.GetLanguage("取消")
+            , null
+             , WCGLanguageSqlite.instance.GetLanguage("确认")
+            , () => {
+                return; //点击购买
+            }
+        );
+
+dmconstant 
+				
+item 读表
+
+Mandy(Mandy张倩倩) 18:18:19
+ 哈喽三位同学，本年最后一个季度的电影小组，真诚邀请你们担任各个小分队的队长哈。
+每个小分队大概都是11个人，我一会把组员给你们分别拉组。
+小分队队长的工作：
+1、组织成员每月一次去电影院门口集体拍照，发朋友圈
+2、分发电影券
+3、收集整理照片、签到表。
+Mandy(Mandy张倩倩) 18:19:03
+KPI要求：
+1、每个组员一个季度至少参加一次拍照
+2、每个月的拍照人数出勤率保证60%以上
+Mandy(Mandy张倩倩) 18:22:50
+ 分享一个组织活动的流程。
+1-- RTX里发个投票选项：10月17拍照、10月20拍照、本月请假
+2-- 根据投票结果，一波或者分两波去拍照都行。保证当月出勤率。
+3-- 去罗宾森电影院门口拍个照，签个到。然后就可以解散了。
+
+
+mainWindow_3_2
+PuzzleLink
+
+SearchLevel
+maze
+Pet
+NormalTrainTimes
+ThreeMatch
+
+cardteamwindow 阵容预览界面
+
+ALInputControl.instance.isBtnPressUGUI(typeList[i])
+
+private Vector2 GetArrayCoordinates (Vector2 _pos) {
+        Vector2 localPoint = Vector2.zero;
+        localPoint = camera.ScreenToWorldPoint(_pos);
+        localPoint.x *= 100;
+        localPoint.y *= 100;
+        //Debug.LogError(localPoint.x + " , " + localPoint.y);
+        //localPoint = new Vector2(camera.transform.position.x, camera.transform.position.y);
+        float x = (int)(localPoint.x / width) * width;
+        if (localPoint.x < 0) {
+            x -= width;
+        }
+
+        float y = (int)(localPoint.y / height) * height;
+        if (localPoint.y < 0) {
+            y -= height;
+        }
+
+        float tx, ty;
+        Debug.LogWarning(x + " ," + y + " , " + Mathf.Abs(x) / width + " , " + (int)(Mathf.Abs(y) / height) % 2);
+        if (((int)(Mathf.Abs(x) / width) % 2 + (int)(Mathf.Abs(y) / height) % 2) % 2 == 0) {
+            Debug.LogError(1);
+            tx = x + width - localPoint.x;
+            ty = tx * height / width + y;
+            if (ty < localPoint.y) {
+                x += width;
+                y += height;
+            }
+        }
+        else {
+            Debug.LogError(2);
+            tx = localPoint.x - x;
+            ty = tx * height / width + y;
+            if (ty < localPoint.y) {
+                y += height;
+            }
+            else {
+                x += width;
+            }
+        }
+        Debug.LogError(x + " ," + y);
+        int nx = (int)(((int)(x / width)- (int)(y / height)) / 2);
+        int ny = (int)((int)(y / height) + nx);
+
+        nx /= 100;
+        ny /= 100;
+        if (new Vector2(nx, ny) != lastCenter) {
+            Debug.LogError(new Vector2(nx, ny) + " , " + localPoint.x + " , " + localPoint.y);
+        }
+
+        return new Vector2(nx, ny);
+    }
+
+
+	GetWindow //根据窗口名获取window
+	OpenAndRecordAllOpen //记录所有开启的窗口，并且开启某些窗口，记录的窗口用一个key记录方便返回操作
+		OpenWindowControl
+	OpenRecordAndCloseAll	//开启已经记录的某个key窗口
+		OpenRecordAndCloseAll	// 恢复key 对应的界面
+
+	AddHasOpenWindowList	// 当窗口开启时加入已开启窗口列表中
+		SortHasOpenWindowListDepth 	// 排序已开启窗口列表中窗口的深度
+	DelHasOpenWindowList	// 当窗口关闭时从已开启窗口列表中删除
+	
+	CloseAllWindow
