@@ -94,6 +94,9 @@ git add *.txt
 
 git remote add origin git@github.com:qpyghb/Test.git		//将本地库和远程库连接
 git clone git://github.com/schacon/grit.git mygrit			//克隆远程到本地
+
+git remote -v						//查看当前连接的远程库信息
+
 git config --global core.editor		//设置编辑软件
 git mv test.txt test				//文件改名	
 git commit --amend					//重新提交上次的提交，可以新增暂存	
@@ -101,8 +104,10 @@ git reset HEAD test.txt				//取消暂存的文件到unstage
 git checkout --	test.txt			//重置文件的修改
 
 	
-	
-	
+!@关联多个远程库
+git remote rm origin												//先删除origin的远程库
+git remote add github git@github.com:michaelliao/learngit.git		//关联 GitHub 的远程库
+git remote add gitee git@gitee.com:liaoxuefeng/learngit.git			//关联码云的远程库	
 	
 	
 	
