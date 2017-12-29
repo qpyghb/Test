@@ -1,0 +1,56 @@
+
+NGUI
+第1章 » 
+
+
+课时12 NGUI中的Anchor锚点设置
+	Sprite控件：
+		//设置相对距离
+		Anchors：
+			type : Unified //统一的锚点 ; Advanced //每个方向有各自的锚点
+			execute : OnUpdate //更新时执行
+			Target : UI Root //锚点
+			Left
+			Right
+			Bottom
+			Top
+			
+课时13 Tween动画		//补间动画
+	Label控件：
+		添加Tween - 
+		Alpha
+			From 0 To 1  	//透明度从0到1
+			Play Style 		//播放模式
+				Once		//一次
+				Ping Pong 	//乒乓，来回循环
+				Loop 		//循环
+			Animation Curve	//播放曲线
+			Duration		//播放一次时长
+			Start Delay		//延迟播放
+			Tween Group		//-分组
+			Ignore TimeScale//-时间放大
+		Color			
+		Width
+		Height
+		Position
+		Rotation
+		Scale
+		Transform			//位置
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
