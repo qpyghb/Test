@@ -33,6 +33,9 @@ git commit						//打开文本编辑器，保存退出后提交
 git commit -m 'description'		//直接提交 暂存的文件
 git commit -a -m 'description'	//直接提交 已跟踪的文件自动暂存，不用add
 
+!@Git推送
+git push -u origin master	//推送git到master分支，-u表示和本地master分支绑定
+
 !@Git移除
 git rm test.txt				//删除文件并放入暂存， 如果之前文件修改后暂存过， 需要加上 -f 强制删除
 git rm --cached test.txt	//删除提交版本库的文件，本地文件不删除
@@ -89,10 +92,11 @@ ssh-keygen -t rsa -C "youremail@example.com"	//创建密匙, 如果找不到命�
 git config --list
 git add *.txt
 
-git clone git://github.com/schacon/grit.git mygrit
+git remote add origin git@github.com:qpyghb/Test.git		//将本地库和远程库连接
+git clone git://github.com/schacon/grit.git mygrit			//克隆远程到本地
 git config --global core.editor		//设置编辑软件
 git mv test.txt test				//文件改名	
-git commit --amend		//重新提交上次的提交，可以新增暂存	
+git commit --amend					//重新提交上次的提交，可以新增暂存	
 git reset HEAD test.txt				//取消暂存的文件到unstage	
 git checkout --	test.txt			//重置文件的修改
 
