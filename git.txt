@@ -96,12 +96,17 @@ git remote add origin git@github.com:qpyghb/Test.git		//将本地库和远程库
 git clone git://github.com/schacon/grit.git mygrit			//克隆远程到本地
 
 git remote -v						//查看当前连接的远程库信息
+git remote rename test tt 	//修改远程仓库的短名
 
 git config --global core.editor		//设置编辑软件
 git mv test.txt test				//文件改名	
 git commit --amend					//重新提交上次的提交，可以新增暂存	
 git reset HEAD test.txt				//取消暂存的文件到unstage	
 git checkout --	test.txt			//重置文件的修改
+
+git fetch [remote-name]			//从远程仓库抓取数据
+git push [remote-name] [branch-name]	//推送数据到远程仓库
+
 
 	
 !@关联多个远程库
@@ -110,7 +115,30 @@ git remote add github git@github.com:michaelliao/learngit.git		//关联 GitHub �
 git remote add gitee git@gitee.com:liaoxuefeng/learngit.git			//关联码云的远程库	
 	
 	
-	
+!@Git标签
+git tag				//查看所有标签
+git tag -l 'v1.4.2.*'	//查看1.4.2系列版本的标签
+git tag -a v1.4 -m 'my version 1.4'	//添加含附注的标签, [-a]表示标签名，[-m]表示说明
+git show v1.4			//查看v1.4标签信息
+
+git tag -s v1.5 -m 'my signed 1.5 tag'		//存在私匙，用GPG签署标签
+git tag -v [tag-name]		//验证标签，要有公匙，放在keyring中
+
+git tag -a v1.2 9fceb02		//给之前的提交打标签，9fceb02为提交的校验，前几位即可
+
+git push origin v1.40			//推送指定标签
+git push origin --tags			//推送所有的标签
+
+
+
+!@Git小技巧
+1、msysGit自动完成， 输入命令是按两下Tab，可以列出匹配的命令建议
+2、git config --global alias.unstage 'reset HEAD --'	//修改别名
+
+
+
+
+
 	
 	
 	
