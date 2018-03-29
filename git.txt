@@ -137,7 +137,8 @@ git push origin --tags			//推送所有的标签
 
 
 
-
+!@加速
+ssh_config 	删除 	#   GSSAPIAuthentication no
 
 	
 	
